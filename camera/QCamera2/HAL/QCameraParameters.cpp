@@ -7371,11 +7371,7 @@ int QCameraParameters::getBurstNum()
  *==========================================================================*/
 int QCameraParameters::getJpegQuality()
 {
-    int quality = getInt(KEY_JPEG_QUALITY);
-    if (quality < 0) {
-        quality = 95; // set to default quality value
-    }
-    return quality;
+    return 100;
 }
 
 
