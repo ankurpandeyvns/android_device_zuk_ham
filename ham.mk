@@ -105,6 +105,10 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    ConfigPanel
 
+# Gestures and Glove mode package
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 #Fingerprint
 PRODUCT_PACKAGES += \
     fingerprint.msm8974
