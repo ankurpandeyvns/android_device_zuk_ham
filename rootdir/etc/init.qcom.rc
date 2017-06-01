@@ -455,12 +455,6 @@ service ppd /system/bin/mm-pp-daemon
     socket pps stream 0660 system system
     group system graphics
 
-on property:init.svc.surfaceflinger=stopped
-    stop ppd
-
-on property:init.svc.surfaceflinger=running
-    start ppd
-
 # diag logging
 service diag_mdlog_start /system/bin/diag_mdlog
     class late_start
