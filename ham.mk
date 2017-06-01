@@ -15,7 +15,7 @@
 #
 
 ifneq ($(QCPATH),)
-$(call inherit-product-if-exists, $(QCPATH)/common/config/device-vendor.mk)
+$(call inherit-product, $(QCPATH)/common/config/device-vendor.mk)
 endif
 
 # overlays
