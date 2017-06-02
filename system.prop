@@ -2,6 +2,11 @@
 # system.prop for ham
 #
 
+# ADB at boot
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+
 ro.sf.lcd_density=400
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 persist.radio.add_power_save=1
