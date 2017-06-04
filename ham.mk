@@ -33,7 +33,9 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    init.safailnet.rc
+    init.safailnet.rc \
+    init.spectrum.rc \
+    init.spectrum.sh 
 
 # Emergenry number list
 PRODUCT_PACKAGES += \

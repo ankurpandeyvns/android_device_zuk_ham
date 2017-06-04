@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import /init.spectrum.rc
 import /init.qcom.usb.rc
 import /init.qcom.power.rc
 import /init.safailnet.rc 

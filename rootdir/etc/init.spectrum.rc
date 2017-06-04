@@ -1,0 +1,151 @@
+# SPECTRUM KERNEL MANAGER
+# Ramdisk file for profile based kernel management
+# Implimentation inspired by Franco's fku profiles
+
+# Initialization
+on property:sys.boot_completed=1
+   # Set default profile on first boot
+   exec u:r:init:s0 root root -- /init.spectrum.sh
+   exec u:r:su:s0 root root -- /init.spectrum.sh
+   # Enable Spectrum support
+   setprop spectrum.support 1
+   # Add kernel name
+   setprop persist.spectrum.kernel Radioactive
+
+# Balance (default profile)
+on property:persist.spectrum.profile=0
+    write /sys/module/cpu_boost/parameters/boost_ms 20
+    write /sys/module/cpu_boost/parameters/sync_threshold 1728000
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
+    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+	write /sys/module/cpu_boost/parameters/input_boost_enabled 0
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel 4
+    write /sys/block/dm-0/queue/scheduler "cfq"
+    write /sys/block/dm-1/queue/scheduler "cfq"
+    write /sys/block/sda/queue/scheduler "cfq"
+    write /sys/block/sde/queue/scheduler "cfq"
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sde/queue/read_ahead_kb 128
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000"
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 70
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1728000
+    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1500000:90 1800000:70"
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 40000
+    write /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor 100000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 30000
+    write /sys/devices/system/cpu/cpufreq/interactive/boost 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2457600
+    write /sys/module/adreno_idler/parameters/adreno_idler_active Y   
+  
+# Performance 
+on property:persist.spectrum.profile=1
+    write /sys/module/cpu_boost/parameters/boost_ms 60
+    write /sys/module/cpu_boost/parameters/sync_threshold 1728000
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1574400
+    write /sys/module/cpu_boost/parameters/input_boost_ms 100
+	write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel 4
+    write /sys/block/dm-0/queue/scheduler "cfq"
+    write /sys/block/dm-1/queue/scheduler "cfq"
+    write /sys/block/sda/queue/scheduler "cfq"
+    write /sys/block/sde/queue/scheduler "cfq"
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sde/queue/read_ahead_kb 128
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2457600
+    write /sys/module/adreno_idler/parameters/adreno_idler_active N 
+   
+   
+# Battery
+on property:persist.spectrum.profile=2
+    write /sys/module/cpu_boost/parameters/boost_ms 60
+    write /sys/module/cpu_boost/parameters/sync_threshold 1728000
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
+    write /sys/module/cpu_boost/parameters/input_boost_ms 100
+	write /sys/module/cpu_boost/parameters/input_boost_enabled 0
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel 4
+    write /sys/block/dm-0/queue/scheduler "noop"
+    write /sys/block/dm-1/queue/scheduler "noop"
+    write /sys/block/sda/queue/scheduler "noop"
+    write /sys/block/sde/queue/scheduler "noop"
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
+    write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sde/queue/read_ahead_kb 2048
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 268800
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 268800
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 268800
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 268800
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1574400
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1574400
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1574400
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1574400
+    write /sys/module/adreno_idler/parameters/adreno_idler_active Y  
+
+# Gaming
+on property:persist.spectrum.profile=3
+    write /sys/module/cpu_boost/parameters/boost_ms 60
+    write /sys/module/cpu_boost/parameters/sync_threshold 1728000
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1574400
+    write /sys/module/cpu_boost/parameters/input_boost_ms 100
+	write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 3
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel 0
+    write /sys/block/dm-0/queue/scheduler "cfq"
+    write /sys/block/dm-1/queue/scheduler "cfq"
+    write /sys/block/sda/queue/scheduler "cfq"
+    write /sys/block/sde/queue/scheduler "cfq"
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sde/queue/read_ahead_kb 128
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "dyninteractive"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2457600
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2457600
+    write /sys/module/adreno_idler/parameters/adreno_idler_active N
