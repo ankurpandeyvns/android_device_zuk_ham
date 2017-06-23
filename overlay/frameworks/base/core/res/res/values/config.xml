@@ -44,6 +44,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+    <add-resource type="integer" name="config_deviceHardwareWakeKeys"></add-resource>
     <integer name="config_deviceHardwareWakeKeys">65</integer>
 
     <!-- Control the behavior when the user long presses the home button.
@@ -295,9 +296,12 @@
  
     <!-- Support in Surfaceflinger for blur layers.
          NOTE: This requires additional hardware-specific code. -->
-    <bool name="config_uiBlurEnabled">true</bool>
+    <!-- Enable blur support
+    <bool name="config_uiBlurEnabled">true</bool> -->
     
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
+    <add-resource type="bool" name="config_notifyClientOnFingerprintCancelSuccess"></add-resource>
+
     <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
     
 </resources>
