@@ -33,3 +33,6 @@ ro.ril.em_redial_vt_failover=true
 
 # Factory reset protection
 ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/frp
+
+# Google assistant
+ro.opa.eligible_device=true
