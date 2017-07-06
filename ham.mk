@@ -130,7 +130,13 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8974
-
+    
+# Weather providers
+PRODUCT_PACKAGES += \
+     OpenWeatherMapProvider \
+     YahooWeatherProvider \
+     WundergroundWeatherProvider    
+    
 # IPC Security config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
