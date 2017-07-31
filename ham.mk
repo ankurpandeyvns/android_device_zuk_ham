@@ -118,6 +118,9 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8974
