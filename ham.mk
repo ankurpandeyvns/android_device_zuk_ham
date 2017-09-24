@@ -123,6 +123,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 #    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
 
+# HIDL
+$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8974
