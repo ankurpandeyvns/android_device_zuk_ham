@@ -410,7 +410,7 @@ service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     group bluetooth net_bt_admin qcom_diag radio
     oneshot
 
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+service hciattach /system/vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin qcom_diag radio
