@@ -20,9 +20,6 @@ DEVICE_PATH := device/zuk/ham
 # TODO: shouldn't be here
 BOARD_VENDOR := zuk
 
-# Assertions
-TARGET_BOARD_INFO_FILE ?= $(DEVICE_PATH)/board-info.txt
-
 #Include path
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
@@ -180,7 +177,6 @@ TARGET_RIL_VARIANT := caf
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_ham
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Use HW crypto for ODE
