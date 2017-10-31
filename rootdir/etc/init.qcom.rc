@@ -496,11 +496,6 @@ service ssr_diag /system/vendor/bin/ssr_diag
     group system
     disabled
 
-# Fingerprint daemon
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-
 service testmode /sbin/testmode
      seclabel u:r:testmode:s0
      class late_start

@@ -101,10 +101,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ConfigPanel
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    fingerprintd
-
 # Graphics
 PRODUCT_PACKAGES += \
     copybit.msm8974 \
