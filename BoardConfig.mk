@@ -61,6 +61,9 @@ endif
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 
+# ADB legacy interface
+TARGET_USES_LEGACY_ADB_INTERFACE := true
+
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_USES_ALSA_AUDIO := true
