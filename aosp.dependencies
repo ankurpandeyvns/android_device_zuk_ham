@@ -1,0 +1,14 @@
+[
+  {
+    "remote":      "github",
+    "repository":  "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
+    "branch":      "lineage-15.0"
+  },
+  {
+    "remote":      "github",
+    "repository":  "sb6596/android_kernel_cyanogen_msm8974",
+    "target_path": "kernel/cyanogen/msm8974"
+    "branch":      "8.x"
+  }
+]
