@@ -66,6 +66,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
