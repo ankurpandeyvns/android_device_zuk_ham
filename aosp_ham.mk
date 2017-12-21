@@ -22,6 +22,9 @@ $(call inherit-product, device/zuk/ham/ham.mk)
 # Inherit some common AEX stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
 PRODUCT_NAME := aosp_ham
 PRODUCT_DEVICE := ham
 PRODUCT_MANUFACTURER := ZUK
