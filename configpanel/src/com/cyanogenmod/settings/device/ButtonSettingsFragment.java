@@ -27,7 +27,7 @@ import android.view.MenuItem;
 
 import com.android.settingslib.drawer.SettingsDrawerActivity;
 
-import org.cyanogenmod.internal.util.FileUtils;
+import com.cyanogenmod.settings.device.utils.FileUtils;
 
 public class ButtonSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {
