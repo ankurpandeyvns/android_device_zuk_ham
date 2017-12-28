@@ -64,7 +64,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/vendor/etc/usb_audio_policy_configuration.xml
 
 PRODUCT_PACKAGES += \
-    audiod \
     audio.a2dp.default \
     audio_amplifier.msm8974 \
     audio_policy.msm8974 \
