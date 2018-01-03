@@ -251,7 +251,7 @@ on post-fs-data
     chmod 2770 /data/system/perfd
 
     # Camera sockets
-    mkdir /data/misc/camera 0770 camera camera
+    mkdir /data/misc/camera 0770 media camera
 
     # Custom ECC
     mkdir /data/misc/radio 0700 radio radio
