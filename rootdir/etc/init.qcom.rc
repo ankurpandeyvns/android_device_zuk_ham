@@ -165,6 +165,10 @@ on boot
     chown root system /sys/devices/virtual/touch/tp_dev/key_reverse
     chmod 0660 /sys/devices/virtual/touch/tp_dev/key_reverse
 
+    # Touchscreen
+    chown root system /sys/devices/virtual/touch/tp_dev/gesture_on
+    chmod 0660 /sys/devices/virtual/touch/tp_dev/gesture_on
+
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
@@ -237,10 +241,6 @@ on post-fs-data
     mkdir /data/time/ 0700 system system
 
     mkdir /data/audio/ 0770 media audio
-
-    # Touchscreen
-    chown system system /sys/devices/virtual/touch/tp_dev/gesture_on
-    chmod 0660 /sys/devices/virtual/touch/tp_dev/gesture_on
 
     setprop vold.post_fs_data_done 1
 
