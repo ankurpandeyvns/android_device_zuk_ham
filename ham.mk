@@ -17,7 +17,7 @@
 
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay vendor/extra/overlays/phone-1080p
-#DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -72,7 +72,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
      ro.config.vc_call_vol_steps=6 \
      audio_hal.period_size=192 \
      mm.enable.smoothstreaming=true \
-     ro.qc.sdk.audio.fluencetype=fluence \
+     ro.qc.sdk.audio.fluencetype=none \
+     persist.audio.fluence.voicerec=true \
+     persist.audio.fluence.speaker=false \
+     use.voice.path.for.pcm.voip=true \
      persist.audio.fluence.voicecall=true \
      audio.offload.buffer.size.kb=32 \
      audio.deep_buffer.media=true \
@@ -232,10 +235,10 @@ PRODUCT_PACKAGES += \
     libxml2
 
 # ANT+
-#PRODUCT_PACKAGES += \
-#    AntHalService \
-#    com.dsi.ant.antradio_library \
-#    libantradio
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
 
 # Enable Bluetooth HFP
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -263,6 +266,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
