@@ -90,13 +90,12 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 TARGET_USE_VENDOR_CAMERA_EXT 	:= true
 USE_DEVICE_SPECIFIC_CAMERA 	:= true
 TARGET_USE_COMPAT_GRALLOC_ALIGN := true
-TARGET_HAS_LEGACY_CAMERA_HAL1   := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 # Tap to wake
-TARGET_TAP_TO_WAKE_NODE := /sys/devices/virtual/touch/tp_dev/gesture_on
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 20971520

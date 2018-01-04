@@ -72,9 +72,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
      ro.config.vc_call_vol_steps=6 \
      audio_hal.period_size=192 \
      mm.enable.smoothstreaming=true \
-     ro.qc.sdk.audio.fluencetype=none \
-     persist.audio.fluence.voicerec=true \
-     persist.audio.fluence.speaker=false \
+     ro.qc.sdk.audio.fluencetype=fluence \
      use.voice.path.for.pcm.voip=true \
      persist.audio.fluence.voicecall=true \
      audio.offload.buffer.size.kb=32 \
@@ -175,7 +173,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false \
-    camera.disable_treble=true
+    camera.disable_treble=true \
+    persist.camera.4k2k.enable=1
+
 
 # Power
 PRODUCT_PACKAGES += \
