@@ -28,6 +28,9 @@ $(call inherit-product, vendor/aosp/common.mk)
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# AospExtended-BuildType
+EXTENDED_BUILD_TYPE := OFFICIAL
+
 PRODUCT_NAME := aosp_ham
 PRODUCT_DEVICE := ham
 PRODUCT_MANUFACTURER := ZUK
