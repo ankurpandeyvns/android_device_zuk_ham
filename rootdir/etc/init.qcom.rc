@@ -290,12 +290,12 @@ service rfs_access /system/vendor/bin/rfs_access
 service qmuxd /system/vendor/bin/qmuxd
     class main
     user radio
-    group radio audio bluetooth gps oem_2950
+    group radio audio bluetooth wakelock gps oem_2950
 
 service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
-    group radio system
+    group radio system wakelock
 
 # QCOM sensor
 service sensors /system/vendor/bin/sensors.qcom
