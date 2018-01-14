@@ -349,6 +349,11 @@ service charger /charger
     critical
     seclabel u:r:charger:s0
 
+service charger_monitor /system/vendor/bin/charger_monitor
+    class late_start
+    user root
+    group root
+
 service hvdcp /system/vendor/bin/hvdcp
     class core
     user root

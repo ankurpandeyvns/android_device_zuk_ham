@@ -26,6 +26,9 @@ vendor/lib/libbtnv.so
 vendor/lib/libaptX_encoder.so|b03772672144d4b750a5672c2922aded93bb0512
 vendor/lib/libaptXHD_encoder.so
 
+# Charger
+vendor/bin/charger_monitor
+
 # Camera
 vendor/bin/mm-qcamera-daemon
 vendor/lib/libmmcamera_interface.so
