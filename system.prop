@@ -41,3 +41,8 @@ ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/frp
 dalvik.vm.boot-dex2oat-threads=8
 dalvik.vm.dex2oat-threads=2
 dalvik.vm.image-dex2oat-threads=4
+
+# Qualcomm® aptX™
+persist.bt.enableAptXHD=true
+persist.service.btui.use_aptx=1
+persistent.bt.a2dp_offload_cap=sbc-aptx-aptXHD
