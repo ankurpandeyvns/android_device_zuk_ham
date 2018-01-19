@@ -21,6 +21,9 @@ on early-init
     chown system system /sys/kernel/debug/kgsl/proc
 
 on init
+
+    export LD_SHIM_LIBS "/system/lib/libfacenet.so|libprotobuf-cpp-haxx.so"
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     mkdir /oem 0550 root root
@@ -176,6 +179,7 @@ on boot
 
 # msm specific files that need to be created on /data
 on post-fs-data
+    mount none /system/vendor/lib/libfacenet-32.so /system/lib/libfacenet.so bind
     mkdir /data/media 0770 media_rw media_rw
 
     # Create directory for TZ Apps

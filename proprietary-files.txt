@@ -121,6 +121,10 @@ vendor/lib/libdrmtime.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 
+# Face Unlock
+vendor/lib/libfacenet-32.so|09cf052e838d6aa16f2f6d7932643f58172566ba
+vendor/lib/libprotobuf-cpp-haxx.so|c280b24acc9c17ca20072d51be9f87b63434dc04
+
 # Fingerprint
 vendor/lib/hw/fingerprint.msm8974.so
 vendor/lib/lib_fpc_tac_shared.so
