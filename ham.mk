@@ -185,6 +185,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_treble=true \
     persist.camera.4k2k.enable=1
 
+
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8974
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
