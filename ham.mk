@@ -185,7 +185,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_treble=true \
     persist.camera.4k2k.enable=1
 
-
 # Power
 PRODUCT_PACKAGES += \
     power.msm8974
