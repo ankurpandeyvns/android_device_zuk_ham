@@ -173,9 +173,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/lineagehw
 
-# No old RPC for prop
-TARGET_NO_RPC := true
-
 # GPS HAL lives here
 USE_DEVICE_SPECIFIC_GPS 	:= true
 USE_DEVICE_SPECIFIC_LOC_API 	:= true
