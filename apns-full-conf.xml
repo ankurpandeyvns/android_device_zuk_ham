@@ -17501,21 +17501,20 @@
       type="default,supl"
   />
 
-  <apn carrier="Loop Mobile MMS"
-      mcc="404"
-      mnc="21"
-      apn="mizone"
-      password="mmsc"
-      mmsc="http://mms.loopmobile.in:8080"
-      mmsproxy="10.0.0.10"
-      mmsport="9401"
+  <apn carrier="Jio4G"
+      mcc="405"
+      mnc="872"
+      apn="jionet"
+      mmsc="http://mmsc.rcom.co.in/mms/"
+      mmsproxy="10.239.221.5"
+      mmsport="8080"
       type="mms"
   />
 
-  <apn carrier="Loop Mobile"
-      mcc="404"
-      mnc="21"
-      apn="www"
+  <apn carrier="jio"
+      mcc="405"
+      mnc="872"
+      apn="jionet"
       type="default,supl"
   />
 
