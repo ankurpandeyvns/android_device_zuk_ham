@@ -182,7 +182,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_treble=true \
-    persist.camera.4k2k.enable=1
+    persist.camera.4k2k.enable=1 \
+    persist.media.treble_omx=false
 
 # Power
 PRODUCT_PACKAGES += \
