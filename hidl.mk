@@ -33,14 +33,12 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-legacy \
-    android.hardware.camera.provider@2.4-impl-service \
-    camera.device@1.0-impl-legacy
+    android.hardware.camera.provider@2.4-service \
+    camera.device@3.2-impl-legacy
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-service.widevine
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
@@ -51,7 +49,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl 
 
