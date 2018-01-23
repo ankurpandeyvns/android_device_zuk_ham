@@ -1,4 +1,5 @@
 on early-init
+    write /sys/block/mmcblk0/queue/scheduler "noop"
     write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
 
 on enable-low-power
@@ -54,7 +55,7 @@ on enable-low-power
     chmod 664 /sys/devices/system/cpu/cpu2/online
     chmod 664 /sys/devices/system/cpu/cpu3/online
 
-    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/module/msm_thermal/core_control/enabled 1
 
     write /sys/module/cpu_boost/parameters/boost_ms 20
     write /sys/module/cpu_boost/parameters/sync_threshold 1728000
@@ -90,10 +91,14 @@ on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
 
+on boot
+    trigger enable-low-power
+
 on class_start:late_start
     trigger enable-low-power
 
 on property:init.svc.recovery=running
+    write /sys/class/leds/button-backlight/brightness 255
     trigger enable-low-power
 
 on property:dev.bootcomplete=1
