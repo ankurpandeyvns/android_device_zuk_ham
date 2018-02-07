@@ -196,6 +196,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 # Releasetools firmware
 ADD_RADIO_FILES := true
 
+# Telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 # Use HW crypto for ODE
 TARGET_HW_DISK_ENCRYPTION 	 := true
 TARGET_LEGACY_HW_DISK_ENCRYPTION := true
