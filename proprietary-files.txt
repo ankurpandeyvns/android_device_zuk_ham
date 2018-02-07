@@ -179,6 +179,12 @@ vendor/lib/libmmosal.so
 vendor/bin/mpdecision
 vendor/lib/libqti-perfd-client.so
 
+# Postprocessing
+vendor/bin/mm-pp-daemon
+vendor/lib/libdisp-aba.so
+vendor/lib/libmm-abl.so
+vendor/lib/libmm-abl-oem.so
+
 # Qualcomm framework
 vendor/bin/irsc_util
 vendor/lib/libdataitems.so
