@@ -38,8 +38,8 @@ ro.ril.em_redial_vt_failover=true
 ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/frp
 
 # Optimize
-dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.dex2oat-threads=2
+dalvik.vm.boot-dex2oat-threads=4
+dalvik.vm.dex2oat-threads=4
 dalvik.vm.image-dex2oat-threads=4
 
 # Qualcomm® aptX™
